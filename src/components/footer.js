@@ -1,8 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 
-export default () => {
+function Footer() {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -12,11 +11,11 @@ export default () => {
       }
     }
   `)
+
   return (
-    <Layout>
-      <h1>
-        Hello from the Index Page.My name is {data.site.siteMetadata.author}
-      </h1>
-    </Layout>
+    <div>
+      <h3>This is the footer Created by {data.site.siteMetadata.author}</h3>
+    </div>
   )
 }
+export default Footer
